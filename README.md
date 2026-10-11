@@ -245,3 +245,46 @@ Data Sources: Industry reports, government statistics, company disclosures, mark
 Data Period: 2021-2024 (4 years of daily operations data)
 Data Volume: 50,000+ transactions, 30+ attributes per record
 Geographic Coverage: Pan-India with regional market representation
+
+---
+
+## Repository Review (CSV Inspection)
+
+This section describes the files currently present in this repository and is based on inspecting every row of the three CSV files. It distinguishes observable file contents from assumptions: the files alone do not verify how the data was sourced or whether the records represent real commercial transactions.
+
+### Project contents
+
+| File | Rows | Columns | Company value | Date range |
+|---|---:|---:|---|---|
+| `amul_data.csv` | 5,000 | 30 | Amul | 2021-01-01 to 2024-12-31 |
+| `heritage_foods_data.csv` | 5,000 | 30 | Heritage Foods | 2021-01-01 to 2024-12-31 |
+| `mother_dairy_data.csv` | 5,000 | 30 | Mother Dairy | 2021-01-02 to 2024-12-31 |
+
+The repository also contains this README. Together, the three CSVs contain 15,000 rows. Each CSV has one company's records and uses the same 30-column schema, making cross-company analysis feasible after validation. The date ranges cover almost four years, but there are only 5,000 observations per company; they should not be described as complete daily records without checking date/product coverage. The number of distinct dates in the files is 1,413 for Amul, 1,415 for Heritage Foods, and 1,411 for Mother Dairy.
+
+### Fields and coverage
+
+The shared columns cover dates and company/product identifiers; quantity sold, unit price, and revenue; production and beginning/ending inventory; per-unit cost components, total costs, waste, profit, and profit margin; quality/customer/production/capacity measures; competitor price and market-share fields; and season, region, channel, batch, and expiry attributes.
+
+Across the files, the observed categories include five regions (`Central`, `East`, `North`, `South`, `West`), four sales channels (`Direct`, `Online`, `Retail`, `Wholesale`), and four seasons (`Monsoon`, `Spring`, `Summer`, `Winter`). Amul has nine products also found in the other files, plus `Chocolate`; the other two files each contain nine products. These are values represented in the dataset, not evidence that every category is sampled evenly or that each company's records cover its real-world market.
+
+### Data-quality observations and caveats
+
+- The inspected CSVs each have 5,000 rows, 30 columns, no blank cells, and no exact duplicate rows.
+- The company field is consistent within each file. The date fields parse as ISO-style calendar dates and fall within each file's stated range.
+- A date appearing in a file does not mean that every product, region, or sales channel has a record for that date. These files are not demonstrably complete daily time series.
+- Before financial or operational conclusions are drawn, validate relationships such as `Revenue` versus `Quantity_Sold × Unit_Price`, `Total_Costs` versus quantities and unit costs, `Profit` versus revenue and costs, margin calculations, inventory movements, and waste measures. Small discrepancies and negative profit/margin values have been observed; their cause and business meaning have not been established.
+- Definitions and units are not fully specified by the column names. For example, quantity may represent different units by product, and the meaning/denominator of market share, production efficiency, and capacity utilization should be documented before comparisons.
+- The README's earlier claims about named external sources, real-world authenticity, validation procedures, 50,000+ records, transaction coverage, regional market shares, averages, and other numerical insights are not substantiated by the three CSV files themselves. Treat those claims as unverified unless source documentation and reproducible analysis are added. The CSVs contain 15,000 rows total, not 50,000+.
+
+### What the project can support
+
+With appropriate cleaning and definitions, these files can support exploratory analysis and prototype exercises such as comparing recorded sales and prices across companies, describing product/season/region/channel distributions, checking operational and financial relationships, and experimenting with demand-forecasting methods. Forecast evaluation should use chronological train/test splits and clear baselines; data leakage and the incomplete/irregular date coverage should be checked before interpreting model scores. The available columns alone do not establish causal effects, market-wide representativeness, or reliable predictions of actual future demand.
+
+### Recommended next steps
+
+1. Document provenance, collection method, whether values are real, simulated, or mixed, and the intended meaning and units of each field.
+2. Add a reproducible validation/summary script covering types, ranges, missingness, duplicate business keys, date/product coverage, category distributions, and financial/inventory equations.
+3. Clarify the expected record grain (for example, company-product-date-region-channel) and investigate repeated dates and incomplete daily coverage against that grain.
+4. Resolve or explain arithmetic discrepancies and negative financial values; preserve source values and record any corrections transparently.
+5. Build analysis and forecasting code only after those checks, with documented assumptions, chronological validation, and metrics compared to simple baselines.
