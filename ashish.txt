@@ -1,0 +1,3 @@
+Test file for the dairydata project.
+
+Random text: Blue kites drift over a quiet market while seven silver spoons dance beside a mango tree.
