@@ -1,0 +1,50 @@
+1. Keep fresh milk refrigerated throughout storage and transport.
+2. Track sales separately for each dairy product category.
+3. Monitor milk demand by region and season.
+4. Record unit prices consistently in Indian rupees.
+5. Compare actual sales with demand forecasts.
+6. Rotate inventory using first-expiry, first-out practices.
+7. Record production dates for every batch.
+8. Measure spoilage to identify avoidable waste.
+9. Maintain cold-chain records during distribution.
+10. Review product shelf life before dispatch.
+11. Compare retail, wholesale, and online sales channels.
+12. Track customer ratings alongside sales volumes.
+13. Examine how promotions affect product demand.
+14. Keep product names consistent across sales records.
+15. Flag missing dates before analyzing transaction data.
+16. Check for duplicate sales entries.
+17. Compare reported revenue with quantity and unit price.
+18. Separate observed values from estimated values.
+19. Document the source of each dataset.
+20. Record the units used for quantities and prices.
+21. Review inventory levels before planning production.
+22. Track production efficiency across facilities.
+23. Compare production output with planned capacity.
+24. Monitor packaging costs by product type.
+25. Track transportation costs by delivery region.
+26. Review raw-material costs over time.
+27. Compare product margins across categories.
+28. Check that closing inventory reconciles with stock movements.
+29. Measure waste by production batch.
+30. Use clear identifiers for products and batches.
+31. Compare demand patterns across companies carefully.
+32. Account for holidays when reviewing daily sales.
+33. Consider weather when interpreting seasonal demand.
+34. Review regional preferences before changing product mixes.
+35. Distinguish fresh curd from other yogurt products.
+36. Group flavored and plain products separately when useful.
+37. Monitor returns and damaged goods.
+38. Record quality checks with their inspection dates.
+39. Keep customer feedback linked to the correct product.
+40. Protect business and customer information in shared reports.
+41. Validate unusual price changes before drawing conclusions.
+42. Check that percentages use a consistent denominator.
+43. Summarize trends with both totals and per-unit measures.
+44. Use a consistent date format across all files.
+45. Note changes to data definitions over time.
+46. Make charts readable with labeled axes and units.
+47. Compare forecast errors across products and regions.
+48. Review supplier reliability as well as supplier cost.
+49. Use traceability records to investigate quality issues.
+50. Revisit assumptions when market conditions change.
